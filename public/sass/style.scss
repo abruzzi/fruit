@@ -3,58 +3,82 @@
 
 @import "icomoon";
 
-$text-color: white;
-$background-color: #e49e61;
+$text-color: #FEFCFB;
+$background-color: #FB7A25;
+$hover-color: #ECB88A;
 
 body {
-	font-size: 62.5%;
+  font-size: 62.5%;
+  font-family: "Open Sans", "Microsoft YaHei", "Hiragino Sans GB", "Hiragino Sans GB W3", "微软雅黑", "Helvetica Neue", Arial, sans-serif;
+  font-weight: normal;
+  background-color: $background-color;
+  position: relative;
+}
 
-  .container {
-    width: 100%;
-    height: 2600px;
-    font-size: 62.5%;
-    margin: 5px auto;
-    text-align: center;
-    background-color: $background-color;
-    color: $text-color;
-    font-family: 'Roboto', sans-serif;
+.bg-radio {
+  position: absolute;
+  top: -200px;
+  left: -200px;
+  background-image: url('/images/imgo-orange.png');
+  background-repeat: no-repeat;
+  background-size: 1024px 1024px;
+  width: 1024px;
+  height: 1024px;
+  z-index: -1;
+}
 
-    header {
-      font-size: 10em;
-      padding: 50px;
-    }
+.radio {
+  position: absolute;
+  right: 2em;
+  bottom: 0;
+  background-image: url('/images/imgo-white.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 128px;
+  height: 128px;
+}
 
-    .title {
-      font-size: 5em;
-      padding-bottom: 10px
-    }
+.container {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  color: $text-color;
+  padding: 24% 0;
 
-    #message {
-      width: 50%;
-      height: 10%;
-      margin: 20px;
-      -webkit-border-radius: 5px;
-
-      font-size: 6em;
-      text-align: left;
-    }
+  input {
+    line-height: 1;
+    vertical-align: middle;
+    border: none;
+    padding: 0 1em;
+    outline: none;
+    font-size: 1.5em;
+    height: 4em;
+  }
 
     .selection {
       font-size: 5em;
       margin: 10px auto;
     }
 
+  #message {
+    width: 500px;
+    @include border-radius(5px 0 0 5px);
+  }
 
-    .submit {
-      font-size: 5em;
-      color: $text-color;
-      background-color: chocolate;
-      width: 10%;
-      display: block;
-      margin: 0 auto;
-      padding: 10px;
-      -webkit-border-radius: 10px;
+  .submit {
+    height: 4em;
+    width: 8em;
+    cursor: pointer;
+    background-color: $hover-color;
+    color: $text-color;
+    margin: 0 auto;
+    @include border-radius(0 5px 5px 0);
+    
+    transition: all .2s ease-in-out;
 
+    &:hover {
+      background-color: $text-color;
+      color: $background-color;
     }
   }
 }

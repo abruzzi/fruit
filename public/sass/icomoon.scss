@@ -23,6 +23,10 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-broadcast:before {
+	content: "\e630";
+}
+
 .icon-zoom-out:before {
 	content: "\e62b";
 }
@@ -185,6 +189,14 @@
 
 .icon-world:before {
 	content: "\e60d";
+}
+
+.icon-arrow-up2:before {
+	content: "\e629";
+}
+
+.icon-ellipsis:before {
+	content: "\e622";
 }
 
 .icon-cross:before {

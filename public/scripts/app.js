@@ -5,7 +5,7 @@ $(function(){
             url: "/",
             data: {"message":$("#message").val()},
             success: function(data) {
-                alert(data);
+                $("#message").val("");
             },
             dataType: "json"
         });

@@ -48,6 +48,6 @@ class FruitApp < Sinatra::Application
 
     get '/' do
         content_type :html
-        haml :index
+        File.open("views/index.html")
     end
 end
