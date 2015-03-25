@@ -1,6 +1,46 @@
 @import "compass/reset";
 @import "compass/css3";
 
+$text-color: white;
+$background-color: #e49e61;
+
 body {
 	font-size: 62.5%;
+
+  .container {
+    width: 100%;
+    height: 2600px;
+    font-size: 62.5%;
+    margin: 5px auto;
+    text-align: center;
+    background-color: $background-color;
+    color: $text-color;
+    font-family: 'Roboto', sans-serif;
+
+    header {
+      font-size: 10em;
+      padding: 50px;
+    }
+
+    .title {
+      font-size: 5em;
+      padding-bottom: 10px
+    }
+
+    #message {
+      width: 50%;
+      height: 10%;
+      margin: 20px;
+      -webkit-border-radius: 5px;
+    }
+
+    .submit {
+      font-size: 5em;
+      width: 10%;
+      margin: 0 auto;
+      padding: 10px;
+      -webkit-border-radius: 10px;
+      background-color: chocolate;
+    }
+  }
 }

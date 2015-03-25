@@ -1,0 +1,7 @@
+$(function(){
+    $('.submit').click(function() {
+
+        
+    });
+
+});
