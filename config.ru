@@ -1,3 +1,3 @@
 require './app'
 
-run BottleApp.new
+run FruitApp.new

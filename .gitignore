@@ -1,5 +1,5 @@
 keys/
 .sass-cache/
 .idea/**
-.DS_Store
 **/.DS_Store
+broadcast_log.log
