@@ -32,15 +32,22 @@ body {
       height: 10%;
       margin: 20px;
       -webkit-border-radius: 5px;
+
+      font-size: 6em;
+      text-align: left;
     }
+
 
     .submit {
       font-size: 5em;
+      color: $text-color;
+      background-color: chocolate;
       width: 10%;
+      display: block;
       margin: 0 auto;
       padding: 10px;
       -webkit-border-radius: 10px;
-      background-color: chocolate;
+
     }
   }
 }

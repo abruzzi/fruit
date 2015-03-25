@@ -94,13 +94,17 @@ body .container #message {
   height: 10%;
   margin: 20px;
   -webkit-border-radius: 5px;
+  font-size: 6em;
+  text-align: left;
 }
-/* line 37, ../sass/style.scss */
+/* line 41, ../sass/style.scss */
 body .container .submit {
   font-size: 5em;
+  color: white;
+  background-color: chocolate;
   width: 10%;
+  display: block;
   margin: 0 auto;
   padding: 10px;
   -webkit-border-radius: 10px;
-  background-color: chocolate;
 }

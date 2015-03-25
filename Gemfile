@@ -4,6 +4,7 @@ gem 'sinatra'
 gem 'rack-contrib'
 gem 'haml'
 
+gem 'net-ssh'
 gem 'compass'
 gem 'guard'
 

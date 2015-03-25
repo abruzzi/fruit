@@ -2,7 +2,9 @@
 -   host: "10.29.3.137"
     user: "twer"
     key: "keys/id_telstra"
+    desc: "terrecotta"
 -   host: "10.29.3.137"
     user: "twer"
     key: "keys/id_telstra"
+    desc: "terrecotta"
 
