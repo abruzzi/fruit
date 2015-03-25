@@ -3,11 +3,11 @@ $(function(){
         $.ajax({
             type: "POST",
             url: "/",
-            data: $("#message").val(),
+            data: {"message":$("#message").val()},
             success: function(data) {
                 alert(data);
             },
-            dataType: "text"
+            dataType: "json"
         });
     });
 
