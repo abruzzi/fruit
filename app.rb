@@ -17,4 +17,9 @@ class BottleApp < Sinatra::Application
         message = params["message"]
         {:message => message}.to_json
     end
+
+    get '/' do
+        content_type :html
+        haml :index
+    end
 end
