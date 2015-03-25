@@ -3,8 +3,50 @@
     user: "twer"
     key: "keys/id_telstra"
     desc: "terrecotta"
--   host: "10.29.3.137"
+
+-   host: "10.29.2.109"
     user: "twer"
     key: "keys/id_telstra"
-    desc: "terrecotta"
+    desc: "Seahorse"
+
+-   host: "10.29.10.11"
+    user: "twer"
+    key: "keys/id_telstra"
+    desc: "MSP"
+
+-   host: "10.129.100.166"
+    user: "twer"
+    key: "keys/id_telstra"
+    desc: "15楼厨房"
+
+-   host: "10.29.2.216"
+    user: "twer"
+    key: "keys/id_telstra"
+    desc: "李栋旁边1"
+
+-   host: "10.129.100.34"
+    user: "twer"
+    key: "keys/id_telstra"
+    desc: "李栋旁边2"
+
+-   host: "10.201.129.0"
+    user: "twer"
+    key: "keys/id_telstra"
+    desc: "李栋旁边3"
+
+
+-   host: "10.29.2.82"
+    user: "twer"
+    key: "keys/id_telstra"
+    desc: "张静强旁边1"
+
+-   host: "10.201.128.108"
+    user: "twer"
+    key: "keys/id_telstra"
+    desc: "张静强旁边2"
+
+-   host: "10.29.3.11"
+    user: "twer"
+    key: "keys/id_telstra"
+    desc: "边蕤旁边"
 

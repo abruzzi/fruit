@@ -12,7 +12,7 @@ module Sinatra
     module Broadcast
         def send_message(config, message)
             Net::SSH.start(config["host"], config["user"], :keys => config["key"]) do |session|
-                #session.exec!("say -v Ting-Ting #{message}")
+                # session.exec!("say -v Ting-Ting #{message}")
                 output = session.exec!("echo #{message}")
                 puts output
             end
