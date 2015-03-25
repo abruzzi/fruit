@@ -1,6 +1,9 @@
 source 'http://ruby.taobao.org'
 
 gem 'sinatra'
+gem 'rack-contrib'
+gem 'haml'
+
 gem 'compass'
 gem 'guard'
 

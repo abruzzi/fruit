@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'rack/contrib'
+require 'haml'
 require 'json'
 
 class BottleApp < Sinatra::Application
