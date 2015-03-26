@@ -1,15 +1,22 @@
 $(function(){
     $('.submit').click(function() {
+        var message = $("#message").val();
+        if(!message) {
+            alert("请输入要广播的内容");
+            return false;
+        }
+
         $.ajax({
             type: "POST",
             url: "/",
-            data: {"message":$("#message").val(),
-                    "isEleven": $("#eleven").is(":checked"),
-                    "isFifteen": $("#fifteen").is(":checked")},
+            dataType: "json",
+            data: {"message": message},
             success: function(data) {
                 $("#message").val("");
             },
-            dataType: "json"
+            error: function(data) {
+                console.log("sent message failed");
+            }
         });
     });
 

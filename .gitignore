@@ -3,4 +3,3 @@ keys/
 .idea/**
 **/.DS_Store
 broadcast_log.log
-public/css/
