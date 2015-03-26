@@ -354,13 +354,19 @@ body {
   text-align: left;
   display: none;
   position: absolute;
-  width: 120px;
+  width: 160px;
   overflow: hidden;
-  border: 1px solid #FB7A25;
+  /*border: 1px solid $background-color;*/
   font-size: 1.5em;
   color: #FEFCFB;
 }
 /* line 30, ../sass/style.scss */
+.dropdown .title {
+  background-color: #666666;
+  color: white;
+  padding: .4em .6em;
+}
+/* line 36, ../sass/style.scss */
 .dropdown .item {
   border: 1px solid transparent;
   background-color: white;
@@ -369,14 +375,14 @@ body {
   cursor: pointer;
   transition: all .1s ease-in-out;
 }
-/* line 37, ../sass/style.scss */
+/* line 43, ../sass/style.scss */
 .dropdown .item:hover {
   border: 1px solid #FEFCFB;
   color: #FEFCFB;
   background-color: #FB7A25;
 }
 
-/* line 45, ../sass/style.scss */
+/* line 51, ../sass/style.scss */
 .bg-radio {
   position: absolute;
   top: -200px;
@@ -389,7 +395,7 @@ body {
   z-index: -1;
 }
 
-/* line 57, ../sass/style.scss */
+/* line 63, ../sass/style.scss */
 .radio {
   position: absolute;
   right: 2em;
@@ -401,7 +407,7 @@ body {
   height: 128px;
 }
 
-/* line 68, ../sass/style.scss */
+/* line 74, ../sass/style.scss */
 .container {
   width: 100%;
   margin: 0 auto;
@@ -410,7 +416,7 @@ body {
   padding: 24% 0;
   position: relative;
 }
-/* line 76, ../sass/style.scss */
+/* line 82, ../sass/style.scss */
 .container input {
   line-height: 1;
   vertical-align: middle;
@@ -420,7 +426,7 @@ body {
   font-size: 1.5em;
   height: 4em;
 }
-/* line 86, ../sass/style.scss */
+/* line 92, ../sass/style.scss */
 .container #message {
   width: 500px;
   color: #666666;
@@ -428,7 +434,7 @@ body {
   -webkit-border-radius: 5px;
   border-radius: 5px 0 0 5px;
 }
-/* line 92, ../sass/style.scss */
+/* line 98, ../sass/style.scss */
 .container .submit {
   height: 4em;
   width: 8em;
@@ -441,7 +447,7 @@ body {
   border-radius: 0 5px 5px 0;
   transition: all .2s ease-in-out;
 }
-/* line 103, ../sass/style.scss */
+/* line 109, ../sass/style.scss */
 .container .submit:hover {
   background-color: #FEFCFB;
   color: #FB7A25;

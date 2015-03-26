@@ -6,6 +6,9 @@
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link href="favicon.ico" rel="shortcut icon">
     <script type="template" id="dropdown">
+      <li class="title">
+        <span>选择需要通知的区域</span>
+      </li>
       <% _.each(regions, function(region) { %>
         <li class="item" data-region="<%= region.region %>">
           <span><%= region.description %></span>
