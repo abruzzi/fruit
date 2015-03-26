@@ -22,11 +22,11 @@ module Sinatra
       end
     end
 
-    def get_certain_clients(region)
-      unless region.empty?
-        settings.always_ons.select do |always_on|
-          always_on['region'].start_with?(region)
-        end  
+    def get_certain_clients(regions)
+      unless regions.empty?
+        return settings.always_ons.select do |always_on|
+          regions.include? always_on['region'].split(',')[0].strip
+        end 
       end
 
       settings.always_ons
@@ -56,24 +56,26 @@ class FruitApp < Sinatra::Application
     {:message => "page not found"}.to_json
   end
 
-  post '/broadcast/:region' do
+  post '/broadcast' do
       message = params["message"]
-      clients = get_certain_clients(params[:region])
       if message.empty?
           halt 400, {:message => "Bad Request"}.to_json
       end
+      
+      settings.logger.info("Got message #{message} from #{request.ip}")
+
+      real_message, *regions = message.split('@').map(&:strip)
+      clients = get_certain_clients(regions)
 
       threads = []
-
-      settings.logger.info("Got message #{message} from #{request.ip}")
       clients.each do |always_on|
           threads << Thread.new do
-              send_message(always_on, message)
+              send_message(always_on, real_message)
           end
       end
       threads.map(&:join)
 
-      {:message => message}.to_json
+      {:message => real_message}.to_json
   end
 
   get '/broadcast' do
