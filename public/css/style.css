@@ -340,7 +340,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   content: "\e622";
 }
 
-/* line 10, ../sass/style.scss */
+/* line 12, ../sass/style.scss */
 body {
   font-size: 62.5%;
   font-family: "Open Sans", "Microsoft YaHei", "Hiragino Sans GB", "Hiragino Sans GB W3", "微软雅黑", "Helvetica Neue", Arial, sans-serif;
@@ -349,7 +349,34 @@ body {
   position: relative;
 }
 
-/* line 18, ../sass/style.scss */
+/* line 20, ../sass/style.scss */
+.dropdown {
+  text-align: left;
+  display: none;
+  position: absolute;
+  width: 120px;
+  overflow: hidden;
+  border: 1px solid #FB7A25;
+  font-size: 1.5em;
+  color: #FEFCFB;
+}
+/* line 30, ../sass/style.scss */
+.dropdown .item {
+  border: 1px solid transparent;
+  background-color: white;
+  color: #666666;
+  padding: .3em .6em;
+  cursor: pointer;
+  transition: all .1s ease-in-out;
+}
+/* line 37, ../sass/style.scss */
+.dropdown .item:hover {
+  border: 1px solid #FEFCFB;
+  color: #FEFCFB;
+  background-color: #FB7A25;
+}
+
+/* line 45, ../sass/style.scss */
 .bg-radio {
   position: absolute;
   top: -200px;
@@ -362,7 +389,7 @@ body {
   z-index: -1;
 }
 
-/* line 30, ../sass/style.scss */
+/* line 57, ../sass/style.scss */
 .radio {
   position: absolute;
   right: 2em;
@@ -374,15 +401,16 @@ body {
   height: 128px;
 }
 
-/* line 41, ../sass/style.scss */
+/* line 68, ../sass/style.scss */
 .container {
   width: 100%;
   margin: 0 auto;
   text-align: center;
   color: #FEFCFB;
   padding: 24% 0;
+  position: relative;
 }
-/* line 48, ../sass/style.scss */
+/* line 76, ../sass/style.scss */
 .container input {
   line-height: 1;
   vertical-align: middle;
@@ -392,19 +420,15 @@ body {
   font-size: 1.5em;
   height: 4em;
 }
-/* line 58, ../sass/style.scss */
-.container .selection {
-  font-size: 5em;
-  margin: 10px auto;
-}
-/* line 63, ../sass/style.scss */
+/* line 86, ../sass/style.scss */
 .container #message {
   width: 500px;
+  color: #666666;
   -moz-border-radius: 5px 0 0 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px 0 0 5px;
 }
-/* line 68, ../sass/style.scss */
+/* line 92, ../sass/style.scss */
 .container .submit {
   height: 4em;
   width: 8em;
@@ -417,7 +441,7 @@ body {
   border-radius: 0 5px 5px 0;
   transition: all .2s ease-in-out;
 }
-/* line 79, ../sass/style.scss */
+/* line 103, ../sass/style.scss */
 .container .submit:hover {
   background-color: #FEFCFB;
   color: #FB7A25;

@@ -25,7 +25,7 @@ module Sinatra
     def get_certain_clients(regions)
       unless regions.empty?
         return settings.always_ons.select do |always_on|
-          regions.include? always_on['region'].split(',')[0].strip
+          regions.include? always_on['desc']
         end 
       end
 
@@ -81,6 +81,15 @@ class FruitApp < Sinatra::Application
   get '/broadcast' do
     content_type :html
     File.open("views/index.html")
+  end
+
+  get '/regions' do
+    settings.always_ons.map do |always_on| 
+      {
+        :region => always_on["region"],
+        :description => always_on["desc"]
+      }
+    end.to_json
   end
 
   get '/' do
