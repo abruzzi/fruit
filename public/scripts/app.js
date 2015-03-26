@@ -6,9 +6,11 @@ $(function(){
             return false;
         }
 
+        var region = message.split('@')[1];
+
         $.ajax({
             type: "POST",
-            url: "/",
+            url: "/broadcast/" + region,
             dataType: "json",
             data: {"message": message},
             success: function(data) {
