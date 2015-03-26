@@ -13,9 +13,19 @@ module Sinatra
     def send_message(config, message)
       Net::SSH.start(config["host"], config["user"], :keys => config["key"]) do |session|
         # session.exec!("say -v Ting-Ting #{message}")
-        output = session.exec!("echo #{message}")
+        output = session.exec!("echo #{message}  #{config["host"]}")
         puts output
       end
+    end
+
+    def get_certain_clients(floor)
+      var client = Array.new
+      settings.always_ons.each do |always_on|
+        if (always_on['region'][/^#{floor}/])
+          client.push always_on
+        end
+      end
+
     end
   end
 end
@@ -46,8 +56,20 @@ class FruitApp < Sinatra::Application
     {:message => message}.to_json
   end
 
-  get '/' do
+  get '/11' do
     content_type :html
     File.open("views/index.html")
   end
+
+  post '/11' do
+    message = params["message"]
+    var clients = get_certain_clients(11)
+
+    clients.each do |always_on|
+      settings.logger.info("send message to #{always_on['host']}, message is #{message}")
+      send_message(always_on, message)
+    end
+    {:message => message}.to_json
+  end
+
 end
