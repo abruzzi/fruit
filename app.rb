@@ -38,14 +38,17 @@ end
 
 class FruitApp < Sinatra::Application
   use Rack::PostBodyContentTypeParser
+  
+  use Rack::Auth::Basic do |username, password|
+    username == 'admin' && password == 'secret'
+  end
+
   helpers Sinatra::Broadcast
-
-
-    configure do
-        set :bind, '0.0.0.0'
-        set :logger, Logger.new('broadcast_log.log', 'monthly')
-        set :always_ons, YAML.load_file('always-ons.yml')
-    end
+  configure do
+      set :bind, '0.0.0.0'
+      set :logger, Logger.new('broadcast_log.log', 'monthly')
+      set :always_ons, YAML.load_file('always-ons.yml')
+  end
 
   before do
     content_type :json
