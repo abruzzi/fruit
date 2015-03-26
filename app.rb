@@ -34,10 +34,12 @@ class FruitApp < Sinatra::Application
   use Rack::PostBodyContentTypeParser
   helpers Sinatra::Broadcast
 
-  configure do
-    set :logger, Logger.new('broadcast_log.log', 'monthly')
-    set :always_ons, YAML.load_file('always-ons.yml')
-  end
+
+    configure do
+        set :bind, '0.0.0.0'
+        set :logger, Logger.new('broadcast_log.log', 'monthly')
+        set :always_ons, YAML.load_file('always-ons.yml')
+    end
 
   before do
     content_type :json
@@ -47,14 +49,25 @@ class FruitApp < Sinatra::Application
     {:message => "page not found"}.to_json
   end
 
-  post '/' do
-    message = params["message"]
-    settings.always_ons.each do |always_on|
-      settings.logger.info("send message to #{always_on['host']}, message is #{message}")
-      send_message(always_on, message)
+    post '/' do
+        message = params["message"]
+        
+        if message.empty?
+            halt 400, {:message => "Bad Request"}.to_json
+        end
+
+        threads = []
+
+        settings.logger.info("Got message #{message} from #{request.ip}")
+        settings.always_ons.each do |always_on|
+            threads << Thread.new do
+                send_message(always_on, message)
+            end
+        end
+        threads.map(&:join)
+
+        {:message => message}.to_json
     end
-    {:message => message}.to_json
-  end
 
   get '/11' do
     content_type :html
