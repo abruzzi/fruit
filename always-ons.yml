@@ -1,4 +1,10 @@
 ---
+-   host: "10.29.2.239"
+    user: "twer"
+    key: "keys/id_telstra"
+    region: "11,East,2"
+    desc: "高老板旁边"
+
 -   host: "10.29.3.137"
     user: "twer"
     key: "keys/id_telstra"
