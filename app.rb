@@ -11,10 +11,14 @@ require 'logger'
 module Sinatra
   module Broadcast
     def send_message(config, message)
-      Net::SSH.start(config["host"], config["user"], :keys => config["key"]) do |session|
-        # session.exec!("say -v Ting-Ting #{message}")
-        output = session.exec!("echo #{message}  #{config["host"]} #{config["desc"]}")
-        puts output
+      begin
+        Net::SSH.start(config["host"], config["user"], :keys => config["key"], :timeout => 3) do |session|
+          # session.exec!("say -v Ting-Ting #{message}")
+          output = session.exec!("echo #{message}  #{config["host"]} #{config["desc"]}")
+          puts output
+        end        
+      rescue Exception => e
+        settings.logger.info(e.message)
       end
     end
 
@@ -24,7 +28,7 @@ module Sinatra
           always_on['region'].start_with?(region)
         end  
       end
-      
+
       settings.always_ons
     end
   end
