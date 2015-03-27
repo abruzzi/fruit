@@ -9,7 +9,15 @@ $(function(){
             var top = offset.top + 40;
             var left = offset.left + ($(this).caret() * 10) + 1;
             $.get('/regions').done(function(data){
-                $("#regions").html(compiled({"regions": data})).css({
+                var regions = [
+                    {
+                        description: "11楼"
+                    },
+                    {
+                        description: "15楼"
+                    }
+                ].concat(data);
+                $("#regions").html(compiled({"regions": regions})).css({
                     top: top,
                     left: left
                 }).show();

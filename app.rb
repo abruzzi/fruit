@@ -25,8 +25,9 @@ module Sinatra
     def get_certain_clients(regions)
       unless regions.empty?
         return settings.always_ons.select do |always_on|
-          regions.include? always_on['desc']
-        end 
+          temp = (always_on['desc']+ regions).uniq
+          temp .length < always_on['desc'].length + regions.length
+        end
       end
 
       settings.always_ons
@@ -86,8 +87,7 @@ class FruitApp < Sinatra::Application
   get '/regions' do
     settings.always_ons.map do |always_on| 
       {
-        :region => always_on["region"],
-        :description => always_on["desc"]
+        :description => always_on["desc"][1]
       }
     end.to_json
   end

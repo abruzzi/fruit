@@ -2,66 +2,55 @@
 -   host: "10.29.2.239"
     user: "twer"
     key: "keys/id_telstra"
-    region: "11,East,2"
-    desc: "高老板旁边"
+    desc: ["11楼", "Orpheus"]
 
 -   host: "10.29.3.137"
     user: "twer"
     key: "keys/id_telstra"
-    region: "11-East-2"
-    desc: "Terrecotta"
+    desc: ["11楼", "Terracotta"]
 
 -   host: "10.29.2.109"
     user: "twer"
     key: "keys/id_telstra"
-    region: "11-East-1"
-    desc: "Seahorse"
+    desc: ["11楼", "Seahorse"]
 
 -   host: "10.29.10.11"
     user: "twer"
     key: "keys/id_telstra"
-    region: "11-West"
-    desc: "MSP"
+    desc: ["11楼", "MSP"]
 
 -   host: "10.129.100.166"
     user: "twer"
     key: "keys/id_telstra"
-    region: "15-Middle"
-    desc: "15楼厨房"
+    desc: ["15楼", "15楼厨房"]
 
 -   host: "10.29.2.216"
     user: "twer"
     key: "keys/id_telstra"
-    region: "15-East-1-1"
-    desc: "李栋旁边1"
+    desc: ["15楼", "李栋旁边1"]
 
 -   host: "10.129.100.34"
     user: "twer"
     key: "keys/id_telstra"
-    region: "15-East-1-2"
-    desc: "李栋旁边2"
+    desc: ["15楼", "李栋旁边2"]
 
 -   host: "10.201.129.0"
     user: "twer"
     key: "keys/id_telstra"
-    region: "15-East-1-3"
-    desc: "李栋旁边3"
+    desc: ["15楼", "李栋旁边3"]
 
 -   host: "10.29.2.82"
     user: "twer"
     key: "keys/id_telstra"
-    region: "15-East-2-1"
-    desc: "张静强旁边1"
+    desc: ["15楼", "张静强旁边1"]
 
 -   host: "10.201.128.108"
     user: "twer"
     key: "keys/id_telstra"
-    region: "15-East-2-2"
-    desc: "张静强旁边2"
+    desc: ["15楼", "张静强旁边2"]
 
 -   host: "10.29.3.11"
     user: "twer"
     key: "keys/id_telstra"
-    region: "15-West"
-    desc: "边蕤旁边"
+    desc: ["15楼", "边蕤旁边"]
 
