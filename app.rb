@@ -25,8 +25,7 @@ module Sinatra
     def get_certain_clients(regions)
       unless regions.empty?
         return settings.always_ons.select do |always_on|
-          temp = (always_on['desc']+ regions).uniq
-          temp .length < always_on['desc'].length + regions.length
+          (always_on['desc'] & regions).length > 0
         end
       end
 
